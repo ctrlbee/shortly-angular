@@ -1,6 +1,22 @@
 <div id='container'>
 <!-- Your code here -->
 
+  <div ng-controller='ShortenController' id='create'>
+    <form>
+        <input class='text' type='text' name='url' ng-model='url'>
+        <input ng-click="createLink()" type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' src='/assets/spiffygif_46x46.gif'>
+    <div class='message'></div>
+
+    <div ng-hide="justUploaded" class='info'>
+      <div class='visits'><span class='count'>{{justUploaded.visits}}</span>Visits</div>
+      <div class='title'>{{justUploaded.title}}</div>
+      <div class='original'>{{justUploaded.url}}</div>
+      <a href='{{link.base_url}}/{{link.code}}'>{{justUploaded.base_url}}/{{justUploaded.code}}</a>
+    </div>
+
+  </div>
 </div>
 
 
