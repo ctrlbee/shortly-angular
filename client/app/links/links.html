@@ -1,3 +1,13 @@
+<div id='layout'>
+  <div class='navigation' ng-controller='AuthController'>
+  <ul>
+    <li><a href='#' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+    <li><a ng-click="signout()" class='logout'>Log Out</a></li>
+  </ul>
+  </div>
+</div>
+
 <div ng-controller="LinksController" ng-init="getLinks()" id='container'>
   <div ng-repeat="link in links" id='link'>
     <!-- <img src='/redirect_icon.png'/> -->

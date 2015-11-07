@@ -1,7 +1,16 @@
 <div id='container'>
-<!-- Your code here -->
 
-  <div ng-controller='ShortenController' id='create'>
+  <div id='layout' ng-controller='AuthController'>
+    <div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+      <li><a ng-click="signout()" class='logout'>Log Out</a></li>
+    </ul>
+    </div>
+  </div>
+
+  <div id='create'>
     <form>
         <input class='text' type='text' name='url' ng-model='url'>
         <input ng-click="createLink()" type='submit' value='Shorten'>
@@ -9,7 +18,7 @@
     <img class='spinner' src='/assets/spiffygif_46x46.gif'>
     <div class='message'></div>
 
-    <div ng-hide="justUploaded" class='info'>
+    <div ng-hide="!justUploaded" class='info'>
       <div class='visits'><span class='count'>{{justUploaded.visits}}</span>Visits</div>
       <div class='title'>{{justUploaded.title}}</div>
       <div class='original'>{{justUploaded.url}}</div>

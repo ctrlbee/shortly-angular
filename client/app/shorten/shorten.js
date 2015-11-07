@@ -5,7 +5,6 @@ angular.module('shortly.shorten', [])
   $scope.justUploaded;
 
   $scope.createLink = function () {
-    console.log("creating link")
     Links.createLink($scope.url)
       .then(function (link) {
         //render

@@ -13,10 +13,10 @@ angular.module('shortly.services', [])
     });
   };
 
-  var createLink = function (url){
-    return $http({
-      method: 'POST', 
-      url: '/api/links', 
+  var createLink = function (url) {
+      return $http({
+      method: 'POST',
+      url: '/api/links',
       data: {
         url: url
       }
@@ -27,7 +27,7 @@ angular.module('shortly.services', [])
   };
 
   return {
-    createLink: createLink, 
+    createLink: createLink,
     getLinks: getLinks
   };
 })
@@ -66,6 +66,7 @@ angular.module('shortly.services', [])
   };
 
   var signout = function () {
+    console.log("signing out")
     $window.localStorage.removeItem('com.shortly');
     $location.path('/signin');
   };
