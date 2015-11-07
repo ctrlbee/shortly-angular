@@ -1,6 +1,6 @@
-<div id='container'>
+<div ng-controller="LinksController" ng-init="getLinks()" id='container'>
   <div ng-repeat="link in links" id='link'>
-    <img src='/redirect_icon.png'/>
+    <!-- <img src='/redirect_icon.png'/> -->
     <div class='info'>
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
       <div class='title'>{{link.title}}</div>
